@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.PurchaseVoucherController">
+   <children>
+      <Button fx:id="kbill" layoutX="988.0" layoutY="583.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="130.0" text="Print">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <VBox layoutX="24.0" layoutY="16.41796875">
+         <children>
+            <VBox fx:id="topvbox" prefHeight="94.0" prefWidth="1200.0">
+               <children>
+                  <HBox fx:id="row1hbox" prefHeight="17.0" prefWidth="1042.0">
+                     <children>
+                        <HBox fx:id="vnohbox" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="300.0">
+                           <children>
+                              <Text fill="#363636" strokeType="OUTSIDE" strokeWidth="0.0" text="VOUCHER NO :" textAlignment="CENTER" wrappingWidth="147.29244232177734">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fx:id="vno" fill="#262626" strokeType="OUTSIDE" strokeWidth="0.0" text="124646545454545" wrappingWidth="233.77349853515625">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="row2hbox">
+                     <children>
+                        <HBox fx:id="datehbox" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="250.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="50.24078369140625">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <DatePicker fx:id="purchasedt" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="row3hbox" prefHeight="0.0" prefWidth="1200.0">
+                     <children>
+                        <HBox fx:id="billnohbox" prefHeight="27.0" prefWidth="223.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bill No :" wrappingWidth="70.57344818115234">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="billno" prefHeight="26.0" prefWidth="118.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fx:id="billdatehbox" prefHeight="26.0" prefWidth="268.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bill Date :" wrappingWidth="87.57412719726562">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <DatePicker fx:id="billdt" prefHeight="26.0" prefWidth="154.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fx:id="billdatehbox1" layoutX="233.0" layoutY="10.0" prefHeight="46.0" prefWidth="323.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Mode :" wrappingWidth="149.57412719726562">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <ComboBox fx:id="pmode" prefHeight="25.0" prefWidth="163.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fx:id="billdatehbox11" layoutX="501.0" layoutY="10.0" prefHeight="46.0" prefWidth="323.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks :" wrappingWidth="83.57412719726562">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Text>
+                              <TextArea fx:id="remarks" prefHeight="37.0" prefWidth="233.0" promptText="Bank, Phonepe number, card last 4 digits, etc.">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextArea>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <HBox layoutY="179.0">
+         <children>
+            <ScrollPane fx:id="spane" prefHeight="499.0" prefWidth="925.0" vbarPolicy="NEVER" vmax="0.0">
+               <content>
+                  <VBox prefHeight="482.0" prefWidth="924.0">
+                     <children>
+                        <TableView fx:id="purchasetv" maxWidth="924.0" prefHeight="450.0" prefWidth="924.0">
+                           <columns>
+                              <TableColumn fx:id="sno_col" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="S no" />
+                              <TableColumn fx:id="item_col" prefWidth="150.0" resizable="false" sortable="false" text="Item" />
+                              <TableColumn fx:id="qty_col" prefWidth="100.0" resizable="false" sortable="false" text="Quantity" />
+                              <TableColumn fx:id="rate_col" prefWidth="100.0" resizable="false" sortable="false" text="Rate" />
+                              <TableColumn fx:id="gross_col" prefWidth="100.0" resizable="false" sortable="false" text="Gross" />
+                              <TableColumn fx:id="disc_col" minWidth="0.0" prefWidth="0.0" resizable="false" sortable="false" text="Discount %" visible="false" />
+                              <TableColumn fx:id="cgst_col" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="CGST" visible="false" />
+                              <TableColumn fx:id="sgst_col" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="SGST" visible="false" />
+                              <TableColumn fx:id="igst_col" prefWidth="100.0" resizable="false" sortable="false" text="GST" />
+                              <TableColumn fx:id="ocharges_col" prefWidth="100.0" resizable="false" sortable="false" text="Other charges" visible="false" />
+                              <TableColumn fx:id="cess_col" prefWidth="100.0" resizable="false" sortable="false" text="Cess" visible="false" />
+                              <TableColumn fx:id="taxable_value_col" prefWidth="100.0" resizable="false" sortable="false" text="Taxable Value" />
+                              <TableColumn fx:id="type_of_purchase_col" prefWidth="100.0" resizable="false" sortable="false" text="Type of Purchase" visible="false" />
+                           </columns>
+                        </TableView>
+                        <HBox fx:id="totals_hbox" prefHeight="25.0" prefWidth="1400.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" textAlignment="CENTER" wrappingWidth="198.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox fx:id="qty_col_total">
+                                 <children>
+                                    <Text fx:id="qty_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="rate_col_total" layoutX="210.0" layoutY="10.0">
+                                 <children>
+                                    <Text fx:id="rate_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="gross_col_total" layoutX="310.0" layoutY="10.0">
+                                 <children>
+                                    <Text fx:id="gross_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="disc_col_total" layoutX="410.0" layoutY="10.0" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" visible="false">
+                                 <children>
+                                    <Text fx:id="discount_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="cgst_col_total" layoutX="510.0" layoutY="10.0" minWidth="0.0" prefWidth="0.0" visible="false">
+                                 <children>
+                                    <Text fx:id="cgst_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="sgst_col_total" layoutX="610.0" layoutY="10.0" minWidth="0.0" prefWidth="0.0" visible="false">
+                                 <children>
+                                    <Text fx:id="sgst_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="igst_col_total" layoutX="710.0" layoutY="10.0">
+                                 <children>
+                                    <Text fx:id="igst_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="ocharges_col_total" layoutX="810.0" layoutY="10.0" minWidth="0.0" prefWidth="0.0" visible="false">
+                                 <children>
+                                    <Text fx:id="oc_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="cess_col_total" layoutX="910.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefWidth="0.0" visible="false">
+                                 <children>
+                                    <Text fx:id="cess_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="taxable_value_col_total" layoutX="1010.0" layoutY="10.0">
+                                 <children>
+                                    <Text fx:id="taxable_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <Text fill="#5c85d1" layoutX="874.0" layoutY="754.0" stroke="#340303" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Amount :  ">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="net_amount" fill="#5c85d1" layoutX="1053.0" layoutY="753.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" wrappingWidth="201.00000000000006">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Button layoutX="234.0" layoutY="727.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="107.0" text="Edit Next">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="76.0" layoutY="726.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="107.0" text="Edit Previous">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="389.0" layoutY="726.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="107.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="print" layoutX="517.0" layoutY="725.0" mnemonicParsing="false" onAction="#printData" prefHeight="34.0" prefWidth="117.0" text="Print" visible="false" />
+      <Button fx:id="save" defaultButton="true" layoutX="988.0" layoutY="487.0" mnemonicParsing="false" onAction="#onSave" prefHeight="25.0" prefWidth="130.0" text="Save">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="ogst" layoutX="973.0" layoutY="296.0" prefHeight="30.0" prefWidth="149.0" promptText="GST" />
+      <TextField fx:id="odisc" layoutX="973.0" layoutY="358.0" prefHeight="30.0" prefWidth="149.0" promptText="Discount" />
+
+   </children>
+</AnchorPane>

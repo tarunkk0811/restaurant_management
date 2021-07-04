@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DashboardController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="_Comapany">
+            <items>
+              <MenuItem fx:id="open_cmpy_btn" mnemonicParsing="false" onAction="#showComapanies" text="Open Company..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="New">
+                    <items>
+                      <MenuItem fx:id="createcompanytb" mnemonicParsing="false" onAction="#createCompanyWindow" text="Create Company..." />
+                        <MenuItem mnemonicParsing="false" text="Create Duplicate Company" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Create Masters">
+                    <items>
+                      <MenuItem fx:id="accounts" mnemonicParsing="false" onAction="#showAccounts" text="Accounts" />
+                      <MenuItem fx:id="products" mnemonicParsing="false" onAction="#showProducts" text="Products" />
+                      <MenuItem fx:id="bank" mnemonicParsing="false" onAction="#showBanks" text="Bank" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Backup" />
+                  <MenuItem mnemonicParsing="false" text="Restore" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Security">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Login" />
+                        <MenuItem mnemonicParsing="false" text="Log out" />
+                        <MenuItem mnemonicParsing="false" text="Change Password" />
+                        <MenuItem mnemonicParsing="false" text="Create Roles" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="_Transactions">
+            <items>
+                  <Menu mnemonicParsing="false" text="Cash and Bank">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Receipts" />
+                        <MenuItem mnemonicParsing="false" text="Payments" />
+                        <MenuItem mnemonicParsing="false" text="Petty Cash" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Purchases">
+                     <items>
+                        <MenuItem fx:id="purchase_voucher_btn" mnemonicParsing="false" onAction="#createPurchaseVoucher" text="Purchase Vouchers" />
+                        <MenuItem mnemonicParsing="false" text="Purchase Returns" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Purchase order" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Sales">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Sales Invoices" />
+                        <MenuItem mnemonicParsing="false" text="Sales Returns" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Sales order" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Unspecified Menu">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Unspecified Menu">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="settings" mnemonicParsing="false" onAction="#showSettings" text="Settings Wizard" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="_Financial Accounting">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ledger" />
+                  <MenuItem mnemonicParsing="false" text="Sub-Ledger" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Cash and Bank Books">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Bank Book" />
+                        <MenuItem mnemonicParsing="false" text="Cash Book" />
+                        <MenuItem mnemonicParsing="false" text="Bank Statement" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Sales Report">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Sales Register" />
+                        <MenuItem mnemonicParsing="false" text="Sales Return Register" />
+                        <MenuItem mnemonicParsing="false" text="Summary Sales Book" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Purchase Report">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Purchase Register" />
+                        <MenuItem mnemonicParsing="false" text="Purchase Return Register" />
+                        <MenuItem mnemonicParsing="false" text="Summary Purchase Book" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Final Accounts">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Profit and Loss" />
+                        <MenuItem mnemonicParsing="false" text="Cash Flow" />
+                        <MenuItem mnemonicParsing="false" text="Budget Report" />
+                        <MenuItem mnemonicParsing="false" text="Multicompany Final Accounts" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Receivable &amp; Payables Analysis">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Outstanding Bills" />
+                        <MenuItem mnemonicParsing="false" text="Bill-wise Analysis" />
+                        <MenuItem mnemonicParsing="false" text="Due Date-wise Analysis" />
+                        <MenuItem mnemonicParsing="false" text="Over Due Analysis" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Sales and Purchase Analysis">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Party-wise Sales" />
+                        <MenuItem mnemonicParsing="false" text="Product-wise Sales" />
+                        <MenuItem mnemonicParsing="false" text="Sales Analysis" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Party-wise Purchase" />
+                        <MenuItem mnemonicParsing="false" text="Product-wise Purchase" />
+                        <MenuItem mnemonicParsing="false" text="Purchase Analysis" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Masters Information">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Accounts Information" />
+                        <MenuItem mnemonicParsing="false" text="Products Information" />
+                        <MenuItem mnemonicParsing="false" text="Products rates" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="_Inventory">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Re-order Report" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Fast moving Items" />
+                  <MenuItem mnemonicParsing="false" text="Slow moving Items" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Edit Inventory..." />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="_GST">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Reports" />
+                  <MenuItem mnemonicParsing="false" text="GSTR1" />
+                  <MenuItem mnemonicParsing="false" text="GSTR2A" />
+                  <MenuItem mnemonicParsing="false" text="GSTR3B" />
+                  <MenuItem mnemonicParsing="false" text="GSTR4" />
+                  <MenuItem mnemonicParsing="false" text="GSTR9" />
+                  <MenuItem mnemonicParsing="false" text="GSTR9A" />
+                  <MenuItem mnemonicParsing="false" text="GST Purchase Register" />
+                  <MenuItem mnemonicParsing="false" text="GST Sales Register" />
+                  <MenuItem mnemonicParsing="false" text="GST Sales Monthly" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
