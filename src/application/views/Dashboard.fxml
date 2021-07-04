@@ -1,191 +1,385 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DashboardController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="_Comapany">
-            <items>
-              <MenuItem fx:id="open_cmpy_btn" mnemonicParsing="false" onAction="#showComapanies" text="Open Company..." />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="New">
-                    <items>
-                      <MenuItem fx:id="createcompanytb" mnemonicParsing="false" onAction="#createCompanyWindow" text="Create Company..." />
-                        <MenuItem mnemonicParsing="false" text="Create Duplicate Company" />
-                    </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Create Masters">
-                    <items>
-                      <MenuItem fx:id="accounts" mnemonicParsing="false" onAction="#showAccounts" text="Accounts" />
-                      <MenuItem fx:id="products" mnemonicParsing="false" onAction="#showProducts" text="Products" />
-                      <MenuItem fx:id="bank" mnemonicParsing="false" onAction="#showBanks" text="Bank" />
-                    </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Backup" />
-                  <MenuItem mnemonicParsing="false" text="Restore" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Security">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Login" />
-                        <MenuItem mnemonicParsing="false" text="Log out" />
-                        <MenuItem mnemonicParsing="false" text="Change Password" />
-                        <MenuItem mnemonicParsing="false" text="Create Roles" />
-                     </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="_Transactions">
-            <items>
-                  <Menu mnemonicParsing="false" text="Cash and Bank">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Receipts" />
-                        <MenuItem mnemonicParsing="false" text="Payments" />
-                        <MenuItem mnemonicParsing="false" text="Petty Cash" />
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DashboardController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="_Comapany">
+                  <items>
+                    <MenuItem fx:id="open_cmpy_btn" mnemonicParsing="false" onAction="#showComapanies" text="Open Company..." />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
-                    </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Purchases">
-                     <items>
-                        <MenuItem fx:id="purchase_voucher_btn" mnemonicParsing="false" onAction="#createPurchaseVoucher" text="Purchase Vouchers" />
-                        <MenuItem mnemonicParsing="false" text="Purchase Returns" />
+                        <Menu mnemonicParsing="false" text="New">
+                          <items>
+                            <MenuItem fx:id="createcompanytb" mnemonicParsing="false" onAction="#createCompanyWindow" text="Create Company..." />
+                              <MenuItem mnemonicParsing="false" text="Create Duplicate Company" />
+                          </items>
+                        </Menu>
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Purchase order" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
+                        <Menu mnemonicParsing="false" text="Create Masters">
+                          <items>
+                            <MenuItem fx:id="accounts" mnemonicParsing="false" onAction="#showAccounts" text="Accounts" />
+                            <MenuItem fx:id="products" mnemonicParsing="false" onAction="#showProducts" text="Products" />
+                            <MenuItem fx:id="bank" mnemonicParsing="false" onAction="#showBanks" text="Bank" />
+                          </items>
+                        </Menu>
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
-                        <MenuItem mnemonicParsing="false" text="Extra item" />
-                     </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Sales">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Sales Invoices" />
-                        <MenuItem mnemonicParsing="false" text="Sales Returns" />
+                        <MenuItem mnemonicParsing="false" text="Backup" />
+                        <MenuItem mnemonicParsing="false" text="Restore" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Sales order" />
-                     </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Unspecified Menu">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Unspecified Menu">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                     </items>
-                  </Menu>
-                  <MenuItem fx:id="settings" mnemonicParsing="false" onAction="#showSettings" text="Settings Wizard" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="_Financial Accounting">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Ledger" />
-                  <MenuItem mnemonicParsing="false" text="Sub-Ledger" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Cash and Bank Books">
+                        <Menu mnemonicParsing="false" text="Security">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Login" />
+                              <MenuItem mnemonicParsing="false" text="Log out" />
+                              <MenuItem mnemonicParsing="false" text="Change Password" />
+                              <MenuItem mnemonicParsing="false" text="Create Roles" />
+                           </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="_Transactions">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Cash and Bank">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Receipts" />
+                              <MenuItem mnemonicParsing="false" text="Payments" />
+                              <MenuItem mnemonicParsing="false" text="Petty Cash" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Purchases">
+                           <items>
+                              <MenuItem fx:id="purchase_voucher_btn" mnemonicParsing="false" onAction="#createPurchaseVoucher" text="Purchase Vouchers" />
+                              <MenuItem mnemonicParsing="false" text="Purchase Returns" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Purchase order" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                              <MenuItem mnemonicParsing="false" text="Extra item" />
+                           </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Sales">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Sales Invoices" />
+                              <MenuItem mnemonicParsing="false" text="Sales Returns" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Sales order" />
+                           </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Unspecified Menu">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Action 1" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Unspecified Menu">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Action 1" />
+                           </items>
+                        </Menu>
+                        <MenuItem fx:id="settings" mnemonicParsing="false" onAction="#showSettings" text="Settings Wizard" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="_Financial Accounting">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Ledger" />
+                        <MenuItem mnemonicParsing="false" text="Sub-Ledger" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Cash and Bank Books">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Bank Book" />
+                              <MenuItem mnemonicParsing="false" text="Cash Book" />
+                              <MenuItem mnemonicParsing="false" text="Bank Statement" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Sales Report">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Sales Register" />
+                              <MenuItem mnemonicParsing="false" text="Sales Return Register" />
+                              <MenuItem mnemonicParsing="false" text="Summary Sales Book" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Purchase Report">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Purchase Register" />
+                              <MenuItem mnemonicParsing="false" text="Purchase Return Register" />
+                              <MenuItem mnemonicParsing="false" text="Summary Purchase Book" />
+                           </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Final Accounts">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Profit and Loss" />
+                              <MenuItem mnemonicParsing="false" text="Cash Flow" />
+                              <MenuItem mnemonicParsing="false" text="Budget Report" />
+                              <MenuItem mnemonicParsing="false" text="Multicompany Final Accounts" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Receivable &amp; Payables Analysis">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Outstanding Bills" />
+                              <MenuItem mnemonicParsing="false" text="Bill-wise Analysis" />
+                              <MenuItem mnemonicParsing="false" text="Due Date-wise Analysis" />
+                              <MenuItem mnemonicParsing="false" text="Over Due Analysis" />
+                           </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Sales and Purchase Analysis">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Party-wise Sales" />
+                              <MenuItem mnemonicParsing="false" text="Product-wise Sales" />
+                              <MenuItem mnemonicParsing="false" text="Sales Analysis" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Party-wise Purchase" />
+                              <MenuItem mnemonicParsing="false" text="Product-wise Purchase" />
+                              <MenuItem mnemonicParsing="false" text="Purchase Analysis" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Masters Information">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Accounts Information" />
+                              <MenuItem mnemonicParsing="false" text="Products Information" />
+                              <MenuItem mnemonicParsing="false" text="Products rates" />
+                           </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="_Inventory">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Bank Book" />
-                        <MenuItem mnemonicParsing="false" text="Cash Book" />
-                        <MenuItem mnemonicParsing="false" text="Bank Statement" />
-                    </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Sales Report">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Sales Register" />
-                        <MenuItem mnemonicParsing="false" text="Sales Return Register" />
-                        <MenuItem mnemonicParsing="false" text="Summary Sales Book" />
-                    </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Purchase Report">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Purchase Register" />
-                        <MenuItem mnemonicParsing="false" text="Purchase Return Register" />
-                        <MenuItem mnemonicParsing="false" text="Summary Purchase Book" />
-                     </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Final Accounts">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Profit and Loss" />
-                        <MenuItem mnemonicParsing="false" text="Cash Flow" />
-                        <MenuItem mnemonicParsing="false" text="Budget Report" />
-                        <MenuItem mnemonicParsing="false" text="Multicompany Final Accounts" />
-                    </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Receivable &amp; Payables Analysis">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Outstanding Bills" />
-                        <MenuItem mnemonicParsing="false" text="Bill-wise Analysis" />
-                        <MenuItem mnemonicParsing="false" text="Due Date-wise Analysis" />
-                        <MenuItem mnemonicParsing="false" text="Over Due Analysis" />
-                     </items>
-                  </Menu>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Sales and Purchase Analysis">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Party-wise Sales" />
-                        <MenuItem mnemonicParsing="false" text="Product-wise Sales" />
-                        <MenuItem mnemonicParsing="false" text="Sales Analysis" />
+                        <MenuItem mnemonicParsing="false" text="Re-order Report" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Party-wise Purchase" />
-                        <MenuItem mnemonicParsing="false" text="Product-wise Purchase" />
-                        <MenuItem mnemonicParsing="false" text="Purchase Analysis" />
-                     </items>
+                        <MenuItem mnemonicParsing="false" text="Fast moving Items" />
+                        <MenuItem mnemonicParsing="false" text="Slow moving Items" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Edit Inventory..." />
+                    </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Masters Information">
+                  <Menu mnemonicParsing="false" text="_GST">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Accounts Information" />
-                        <MenuItem mnemonicParsing="false" text="Products Information" />
-                        <MenuItem mnemonicParsing="false" text="Products rates" />
+                        <MenuItem mnemonicParsing="false" text="Reports" />
+                        <MenuItem mnemonicParsing="false" text="GSTR1" />
+                        <MenuItem mnemonicParsing="false" text="GSTR2A" />
+                        <MenuItem mnemonicParsing="false" text="GSTR3B" />
+                        <MenuItem mnemonicParsing="false" text="GSTR4" />
+                        <MenuItem mnemonicParsing="false" text="GSTR9" />
+                        <MenuItem mnemonicParsing="false" text="GSTR9A" />
+                        <MenuItem mnemonicParsing="false" text="GST Purchase Register" />
+                        <MenuItem mnemonicParsing="false" text="GST Sales Register" />
+                        <MenuItem mnemonicParsing="false" text="GST Sales Monthly" />
                      </items>
                   </Menu>
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="_Inventory">
-              <items>
-                  <MenuItem mnemonicParsing="false" text="Re-order Report" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Fast moving Items" />
-                  <MenuItem mnemonicParsing="false" text="Slow moving Items" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Edit Inventory..." />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="_GST">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Reports" />
-                  <MenuItem mnemonicParsing="false" text="GSTR1" />
-                  <MenuItem mnemonicParsing="false" text="GSTR2A" />
-                  <MenuItem mnemonicParsing="false" text="GSTR3B" />
-                  <MenuItem mnemonicParsing="false" text="GSTR4" />
-                  <MenuItem mnemonicParsing="false" text="GSTR9" />
-                  <MenuItem mnemonicParsing="false" text="GSTR9A" />
-                  <MenuItem mnemonicParsing="false" text="GST Purchase Register" />
-                  <MenuItem mnemonicParsing="false" text="GST Sales Register" />
-                  <MenuItem mnemonicParsing="false" text="GST Sales Monthly" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-</BorderPane>
+              </menus>
+            </MenuBar>
+         </top>
+         <left>
+            <AnchorPane prefHeight="1055.0" prefWidth="484.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="56.0" layoutY="37.0" prefHeight="267.0" prefWidth="348.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Purchase Voucher">
+                           <VBox.margin>
+                              <Insets left="80.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="90.0" layoutY="30.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Sale Invoice">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="80.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button layoutX="90.0" layoutY="91.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="146.0" text="Reports">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="80.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Text layoutX="155.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Back up Date" textAlignment="CENTER" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="209.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="483.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="1062.0" prefWidth="12.0" />
+                  <Separator layoutX="-4.0" layoutY="338.0" prefHeight="4.0" prefWidth="489.0" />
+                  <Separator layoutY="491.0" prefHeight="4.0" prefWidth="486.0" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="1053.0" prefWidth="999.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TreeView layoutY="97.0" prefHeight="768.0" prefWidth="754.0" />
+                  <Text layoutX="219.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Orders">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="792.0" layoutY="277.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="154.0" text="Close Order">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="791.0" layoutY="149.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="155.0" text="Edit Order">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="791.0" layoutY="402.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="156.0" text="Cancel Order">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="960.0" orientation="VERTICAL" prefHeight="1059.0" prefWidth="4.0" />
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="1053.0" prefWidth="459.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text layoutX="168.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistics">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="17.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Todays Orders Summary">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="34.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop orders">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="34.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Online orders">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="35.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total orders">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutY="165.0" prefHeight="7.0" prefWidth="460.0" />
+                  <Separator layoutY="61.0" prefHeight="7.0" prefWidth="460.0" />
+                  <Text layoutX="210.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="210.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="211.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="181.0" layoutY="168.0" orientation="VERTICAL" prefHeight="166.0" prefWidth="4.0" />
+                  <Separator layoutX="-2.0" layoutY="333.0" prefHeight="0.0" prefWidth="461.0" />
+                  <Separator layoutY="279.0" prefHeight="0.0" prefWidth="460.0" />
+                  <Text layoutX="153.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transactions">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="18.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Todays Summary">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutY="411.0" prefHeight="7.0" prefWidth="460.0" />
+                  <Separator layoutY="488.0" prefHeight="7.0" prefWidth="460.0" />
+                  <Text layoutX="35.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UPI">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="35.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="36.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cash">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="211.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="211.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="212.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="-1.0" layoutY="633.0" prefHeight="7.0" prefWidth="460.0" />
+                  <Text layoutX="39.0" layoutY="670.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="212.0" layoutY="669.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="-1.0" layoutY="687.0" prefHeight="0.0" prefWidth="461.0" />
+                  <Separator layoutX="180.0" layoutY="491.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="5.0" />
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
