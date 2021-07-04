@@ -18,18 +18,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Bounds;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.skin.TableColumnHeader;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextBoundsType;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -163,6 +160,23 @@ public class PurchaseVoucherController extends ApplicationMainController {
 
 	@FXML
 	private HBox taxable_value_col_total;
+
+	@FXML
+	private HBox otaxable_value_col_total;
+
+	@FXML
+	private Text otaxable_total;
+
+	@FXML
+	private Text ogst_total;
+
+	@FXML
+	private Text odisc_total;
+
+
+	@FXML
+	private CheckBox is_odisc_per;
+
 
 
 
@@ -663,17 +677,56 @@ public class PurchaseVoucherController extends ApplicationMainController {
 			}
 
 
+			// overall disc
+			odisc.focusedProperty().addListener((observableValue, wasFocussed, isNowFocussed) -> {
+				if(!isNowFocussed) {
+					calculateOverAllDiscAndGst();
+				}
+			});
+
+
+			// overall gst
+			ogst.focusedProperty().addListener((observableValue, wasFocussed, isNowFocussed) -> {
+				if (!isNowFocussed) {
+					calculateOverAllDiscAndGst();
+				}
+			});
 
 
 
-
-
-			/******************************************************************************/
+					/******************************************************************************/
 
 		}
 
 	}
 
+	private void calculateOverAllDiscAndGst(){
+		double temp_total_taxable = Double.parseDouble(calculateSum(tot_taxable_value));
+		double disc_in_rs = calculateDiscountInRs(temp_total_taxable);
+		temp_total_taxable -= disc_in_rs;
+		double gst_in_rs = calculateGstInRs(temp_total_taxable);
+		if(!odisc.getText().isEmpty()){
+			odisc_total.setVisible(true);
+			odisc_total.setText("Rs."+doubleToStringF(disc_in_rs*-1));
+		}
+		if(!ogst.getText().isEmpty()) {
+			ogst_total.setVisible(true);
+			ogst_total.setText("Rs."+doubleToStringF(gst_in_rs));
+		}
+
+		otaxable_total.setText(doubleToStringF(temp_total_taxable));
+		net_amount.setText(doubleToStringF(temp_total_taxable+gst_in_rs));
+
+	}
+	private  double calculateGstInRs(double total_taxable){
+		return (total_taxable*parseToDouble(ogst.getText())/100);
+	}
+
+	private double calculateDiscountInRs(double total_taxable){
+			return is_odisc_per.isSelected() ?
+				(total_taxable*parseToDouble(odisc.getText())/100) :
+				 parseToDouble(odisc.getText());
+	}
 
 	private void calculate(PurchaseItem item) {
 
@@ -954,6 +1007,10 @@ public class PurchaseVoucherController extends ApplicationMainController {
 			new ApplicationController().informationDialog("Not saved! ",null);
 		else
 			new ApplicationController().informationDialog("Succefully saved Data",null);
+
+		// close the window
+		Stage stage = (Stage) save.getScene().getWindow();
+		stage.close();
 
 
 	}
