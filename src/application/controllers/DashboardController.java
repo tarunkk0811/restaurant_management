@@ -32,8 +32,8 @@ public class DashboardController extends  ApplicationMainController{
 
 	@FXML
 	private MenuItem open_cmpy_btn, createcompanytb;
-	static Scene pvscene;
-	static Stage pvstage;
+	static Scene pvscene,salescene;
+	static Stage pvstage,salestage;
 
 	@FXML
 	void showAccounts(ActionEvent event) {
@@ -124,6 +124,19 @@ public class DashboardController extends  ApplicationMainController{
 		pvstage.show();
 		PurchaseVoucherController pv = loader.getController();
 		hideTableColumns(pv);
+	}
+
+	@FXML
+	void createSalesInvoice(ActionEvent event) throws IOException, ParseException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/SalesInvoice.fxml"));
+		Parent root = loader.load();
+		salestage = new Stage();
+		//stage.initModality(Modality.APPLICATION_MODAL);
+		salescene = new Scene(root, 1280, 800);
+		salestage.setScene(salescene);
+		salestage.setTitle("Order - Sales");
+		salestage.setResizable(false);
+		salestage.show();
 	}
 
 	public static Scene getPVScene(){

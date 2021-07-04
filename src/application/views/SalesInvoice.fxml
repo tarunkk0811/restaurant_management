@@ -1,143 +1,316 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SalesInvoiceController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SalesInvoiceController">
    <children>
-      <TextField fx:id="newtf1" alignment="CENTER" layoutX="563.0" layoutY="179.0" prefHeight="32.0" prefWidth="136.0" visible="false" />
-      <Text layoutX="64.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice No :">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="196.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="265.9392395019531">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="27.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales Account :">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="sales_account_type" layoutX="181.0" layoutY="72.0" prefHeight="23.0" prefWidth="211.0" />
-      <Text layoutX="479.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="70.2415771484375">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <DatePicker fx:id="date" layoutX="548.0" layoutY="74.0" prefHeight="24.0" prefWidth="190.0" />
-      <Text layoutX="806.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer :" wrappingWidth="121.33685302734375">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="customer" layoutX="920.0" layoutY="75.0" prefHeight="23.0" prefWidth="254.0" />
-      <CheckBox layoutX="1007.0" layoutY="22.0" mnemonicParsing="false" text="Raise Cash Reciept">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </CheckBox>
-      <Text layoutX="27.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Business Type :" wrappingWidth="161.39999694824223">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="btype" layoutX="184.0" layoutY="125.0" prefHeight="26.0" prefWidth="109.0" />
-      <CheckBox fx:id="isIgst" layoutX="341.0" layoutY="124.0" mnemonicParsing="false" text="Is IGST">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </CheckBox>
-      <Text layoutX="474.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place of Supply :">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="place" layoutX="634.0" layoutY="128.0" prefHeight="24.0" prefWidth="198.0" />
-      <Text layoutX="872.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sale Type :">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="sale_type" layoutX="984.0" layoutY="126.0" prefHeight="26.0" prefWidth="108.0" />
-      <TextField fx:id="transport" alignment="CENTER" layoutX="1130.0" layoutY="122.0" prefHeight="33.0" prefWidth="122.0" promptText="Transport">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="vehicleNo" alignment="CENTER" layoutX="32.0" layoutY="180.0" prefHeight="31.0" prefWidth="121.0" promptText="Vehicle No">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="ctns" alignment="CENTER" layoutX="194.0" layoutY="179.0" prefHeight="32.0" prefWidth="136.0" promptText="No of Ctns">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="cash_petty_name" alignment="CENTER" layoutX="371.0" layoutY="179.0" prefHeight="32.0" prefWidth="136.0" promptText="Cash Petty Name">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="newtf2" alignment="CENTER" layoutX="763.0" layoutY="178.0" prefHeight="32.0" prefWidth="136.0" />
-      <TextField fx:id="newtf3" alignment="CENTER" layoutX="953.0" layoutY="176.0" prefHeight="32.0" prefWidth="136.0" />
-      <TextField fx:id="newtf4" alignment="CENTER" layoutX="1129.0" layoutY="174.0" prefHeight="32.0" prefWidth="136.0" />
-      <TableView layoutY="225.0" prefHeight="491.0" prefWidth="1282.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-      <Button layoutX="56.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="165.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="304.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="443.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="555.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="704.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="844.0" layoutY="755.0" mnemonicParsing="false" text="Button">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <TextField fx:id="newtf1" alignment="CENTER" layoutX="571.0" layoutY="176.0" prefHeight="32.0" prefWidth="136.0">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
+      <TabPane layoutX="-1.0" layoutY="-3.0" prefHeight="800.0" prefWidth="1276.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Order Invoice">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="763.0" prefWidth="1278.0">
+                     <children>
+                        <Text layoutX="37.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice No:" />
+                        <DatePicker fx:id="order_date" layoutX="173.0" layoutY="57.0" />
+                        <Text layoutX="41.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                        <Text layoutX="432.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table No:" />
+                        <TextField fx:id="order_table_no" layoutX="520.0" layoutY="57.0" />
+                        <Text fx:id="order_invoice" layoutX="113.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" wrappingWidth="309.0700378417969" />
+                           <TableView fx:id="purchasetv" layoutX="2.0" layoutY="125.0" maxWidth="924.0" prefHeight="450.0" prefWidth="654.0">
+                               <columns>
+                                   <TableColumn fx:id="order_sno_col" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="S no" />
+                                   <TableColumn fx:id="order_item_col" prefWidth="150.0" resizable="false" sortable="false" text="Item" />
+                                   <TableColumn fx:id="order_qty_col" prefWidth="100.0" resizable="false" sortable="false" text="Quantity" />
+                                   <TableColumn fx:id="order_rate_col" prefWidth="100.0" resizable="false" sortable="false" text="Rate" />
+                                   <TableColumn fx:id="order_gross_col" prefWidth="100.0" resizable="false" sortable="false" text="Gross" />
+                               </columns>
+                           </TableView>
+                           <HBox fx:id="totals_hbox" layoutX="2.0" layoutY="576.0" prefHeight="25.0" prefWidth="1400.0">
+                               <children>
+                                   <HBox>
+                                       <children>
+                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" textAlignment="CENTER" wrappingWidth="198.0">
+                                               <font>
+                                                   <Font size="15.0" />
+                                               </font>
+                                           </Text>
+                                           <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                       </children>
+                                       <HBox.margin>
+                                           <Insets top="5.0" />
+                                       </HBox.margin>
+                                   </HBox>
+                                   <HBox fx:id="order_qty_col_total">
+                                       <children>
+                                           <Text fx:id="order_qty_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                               <font>
+                                                   <Font size="15.0" />
+                                               </font>
+                                               <HBox.margin>
+                                                   <Insets top="5.0" />
+                                               </HBox.margin>
+                                           </Text>
+                                           <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                       </children>
+                                   </HBox>
+                                   <HBox fx:id="order_rate_col_total" layoutX="210.0" layoutY="10.0">
+                                       <children>
+                                           <Text fx:id="order_rate_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                               <font>
+                                                   <Font size="15.0" />
+                                               </font>
+                                               <HBox.margin>
+                                                   <Insets top="5.0" />
+                                               </HBox.margin>
+                                           </Text>
+                                           <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                       </children>
+                                   </HBox>
+                                   <HBox fx:id="order_gross_col_total" layoutX="310.0" layoutY="10.0">
+                                       <children>
+                                           <Text fx:id="order_gross_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                               <font>
+                                                   <Font size="15.0" />
+                                               </font>
+                                               <HBox.margin>
+                                                   <Insets top="5.0" />
+                                               </HBox.margin>
+                                           </Text>
+                                           <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                       </children>
+                                   </HBox>
+                               </children>
+                           </HBox>
+                        <Button fx:id="order_save" layoutX="959.0" layoutY="199.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="79.0" text="Save">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="order_print" layoutX="964.0" layoutY="290.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" text="Print">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="instructions" layoutX="805.0" layoutY="57.0" />
+                        <Text layoutX="729.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instructions:" />
+                        <Button fx:id="order_summary" layoutX="909.0" layoutY="516.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="188.0" text="Order Summary">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="cancel_order" layoutX="912.0" layoutY="449.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="183.0" text="Cancel Order">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="new_order" layoutX="913.0" layoutY="384.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="183.0" text="New Order">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <CheckBox fx:id="online_order" layoutX="532.0" layoutY="18.0" mnemonicParsing="false" text="Online Order" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Sale Invoice">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="51.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sale Invoice Number:" />
+                        <Text fx:id="sale_invoice" layoutX="202.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="145t" wrappingWidth="272.0060119628906" />
+                        <CheckBox fx:id="online_sale" layoutX="541.0" layoutY="17.0" mnemonicParsing="false" text="Online Order" />
+                        <Text layoutX="55.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+                        <TextField fx:id="customer_name" layoutX="127.0" layoutY="45.0" />
+                        <Text layoutX="360.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
+                        <TextField fx:id="phone" layoutX="432.0" layoutY="44.0" />
+                        <Text layoutX="682.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Number:" />
+                        <TextField fx:id="sale_table_no" layoutX="769.0" layoutY="46.0" />
+                        <DatePicker fx:id="sale_date" layoutX="1069.0" layoutY="43.0" />
+                        <Text layoutX="989.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" />
+                        <Text layoutX="28.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment mode" />
+                        <ComboBox fx:id="pmode" layoutX="128.0" layoutY="84.0" prefWidth="150.0" />
+                        <Text layoutX="943.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks:" />
+                        <TextArea fx:id="remarks" layoutX="1019.0" layoutY="99.0" prefHeight="21.0" prefWidth="203.0" />
+                         <TableView fx:id="purchasetv" layoutX="-2.0" layoutY="151.0" maxWidth="924.0" prefHeight="450.0" prefWidth="924.0">
+                             <columns>
+                                 <TableColumn fx:id="sale_sno_col" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="S no" />
+                                 <TableColumn fx:id="sale_item_col" prefWidth="150.0" resizable="false" sortable="false" text="Item" />
+                                 <TableColumn fx:id="sale_qty_col" prefWidth="100.0" resizable="false" sortable="false" text="Quantity" />
+                                 <TableColumn fx:id="sale_rate_col" prefWidth="100.0" resizable="false" sortable="false" text="Rate" />
+                                 <TableColumn fx:id="sale_gross_col" prefWidth="100.0" resizable="false" sortable="false" text="Gross" />
+                                 <TableColumn fx:id="sale_disc_col" minWidth="0.0" prefWidth="100.0" resizable="false" sortable="false" text="Discount %" />
+                                 <TableColumn fx:id="sale_igst_col" prefWidth="100.0" resizable="false" sortable="false" text="GST" />
+                                 <TableColumn fx:id="sale_taxable_value_col" prefWidth="100.0" resizable="false" sortable="false" text="Taxable Value" />
+                             </columns>
+                         </TableView>
+                         <HBox fx:id="totals_hbox" layoutX="-9.0" layoutY="603.0" prefHeight="25.0" prefWidth="1400.0">
+                             <children>
+                                 <HBox>
+                                     <children>
+                                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" textAlignment="CENTER" wrappingWidth="198.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                     <HBox.margin>
+                                         <Insets top="5.0" />
+                                     </HBox.margin>
+                                 </HBox>
+                                 <HBox fx:id="sale_qty_col_total">
+                                     <children>
+                                         <Text fx:id="sale_qty_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox fx:id="sale_rate_col_total" layoutX="210.0" layoutY="10.0">
+                                     <children>
+                                         <Text fx:id="sale_rate_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox fx:id="sale_gross_col_total" layoutX="310.0" layoutY="10.0">
+                                     <children>
+                                         <Text fx:id="sale_gross_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox fx:id="sale_disc_col_total" layoutX="410.0" layoutY="10.0" maxWidth="100.0" minWidth="100.0" prefWidth="100.0">
+                                     <children>
+                                         <Text fx:id="sale_discount_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox fx:id="sale_igst_col_total" layoutX="710.0" layoutY="10.0">
+                                     <children>
+                                         <Text fx:id="sale_igst_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox fx:id="sale_taxable_value_col_total" layoutX="1010.0" layoutY="10.0">
+                                     <children>
+                                         <Text fx:id="sale_taxable_total" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox fx:id="sale_otaxable_value_col_total" layoutX="614.0" layoutY="10.0">
+                                     <children>
+                                         <Text fx:id="sale_otaxable_total" opacity="0.7" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" textAlignment="CENTER" wrappingWidth="98.0">
+                                             <font>
+                                                 <Font size="15.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                 <Insets top="5.0" />
+                                             </HBox.margin>
+                                         </Text>
+                                         <Line endX="-99.58580017089844" endY="25.0" startX="-100.0" />
+                                     </children>
+                                 </HBox>
+                             </children>
+                         </HBox>
+                         <TextField fx:id="ogst" layoutX="973.0" layoutY="296.0" prefHeight="30.0" prefWidth="149.0" promptText="GST" />
+                         <TextField fx:id="odisc" layoutX="973.0" layoutY="358.0" prefHeight="30.0" prefWidth="149.0" promptText="Discount" />
+                         <CheckBox fx:id="is_odisc_per" layoutX="985.0" layoutY="403.0" mnemonicParsing="false" text="Percentage">
+                             <font>
+                                 <Font size="16.0" />
+                             </font>
+                         </CheckBox>
+                         <Text fx:id="ogst_total" layoutX="1140.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="115.79999999999995">
+                             <font>
+                                 <Font size="16.0" />
+                             </font>
+                         </Text>
+                         <Text fx:id="odisc_total" layoutX="1138.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="115.79999999999995">
+                             <font>
+                                 <Font size="16.0" />
+                             </font>
+                         </Text>
+                         <Button layoutX="81.0" layoutY="693.0" mnemonicParsing="false" text="Edit Previous" />
+                        <Button layoutX="233.0" layoutY="691.0" mnemonicParsing="false" text="Edit Delete" />
+                        <Button fx:id="save_sale" layoutX="1015.0" layoutY="468.0" mnemonicParsing="false" text="Save">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="print_sale" layoutX="1015.0" layoutY="544.0" mnemonicParsing="false" text="Print">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+
+                         <Text fx:id="net_amount" fill="#5c85d1" layoutX="970.0" layoutY="737.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" wrappingWidth="201.00000000000006">
+                             <font>
+                                 <Font name="System Bold" size="25.0" />
+                             </font>
+                         </Text>
+                        <Text fill="#5c85d1" layoutX="829.0" layoutY="737.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Value:" wrappingWidth="134.6000366210938">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Text>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>
